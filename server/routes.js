@@ -26,7 +26,7 @@ module.exports = function(app) {
         .join(" AND ");
     }
 
-    db.many("SELECT * FROM hand_histories"+where).then(function(data) {
+    db.manyOrNone("SELECT * FROM hand_histories"+where).then(function(data) {
       res.json(data);
     });
   });

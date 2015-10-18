@@ -12,7 +12,7 @@ export default React.createClass({
   componentWillReceiveProps: function(newProps) {
     let vals = {};
     for (let p in newProps.values) {
-      if (p !== 'id') vals[p] = newProps.values[p];
+      if (p !== 'id' && newProps.values[p]) vals[p] = newProps.values[p];
     }
     this.setState({values: vals});
   },

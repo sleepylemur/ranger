@@ -8,7 +8,8 @@ export default React.createClass({
     return {
       columns: [],
       data: [],
-      importvalues: {}
+      importvalues: {},
+      filters: {}
     };
   },
   componentWillMount: function() {
@@ -17,8 +18,14 @@ export default React.createClass({
     });
     this.loadData();
   },
-  loadData: function() {
-    get('/histories').then(data => {
+  loadData: function(filters) {
+    let url = '/histories';
+    if (filters) {
+      url += '?'+Object.keys(filters).map(key =>
+        encodeURIComponent(key)+"="+encodeURIComponent(filters[key])
+      ).join('&');
+    }
+    get(url).then(data => {
       this.setState({data: data});
     });
   },
@@ -35,11 +42,15 @@ export default React.createClass({
       this.loadData();
     });
   },
+  updateFilters: function(filters) {
+    this.loadData(filters);
+    this.setState({filters: filters});
+  },
   render: function() {
     return <div>
-      <h3>this is main</h3>
+      <h3>ranger</h3>
       <Importer submit={this.import} columns={this.state.columns} values={this.state.importvalues}/>
-      <Table deleteRow={this.deleteRow} selectRow={this.selectRow} columns={this.state.columns} data={this.state.data}/>
+      <Table filters={this.state.filters} updateFilters={this.updateFilters} deleteRow={this.deleteRow} selectRow={this.selectRow} columns={this.state.columns} data={this.state.data}/>
     </div>
   }
 });
