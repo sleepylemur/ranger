@@ -19,7 +19,8 @@ var rangercolumns = [
   "turn_range",
   "river_texture",
   "river",
-  "river_range"
+  "river_range",
+  "hand_category"
 ];
 
 console.log('recreating table');
