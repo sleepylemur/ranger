@@ -1,7 +1,7 @@
-import React from 'react'
-import Importer from './importer.jsx'
-import Table from './table.jsx'
-import { get,post,api_delete } from './api.js'
+import React from 'react';
+import Importer from './importer.jsx';
+import Table from './table.jsx';
+import { get,post,api_delete } from './api.js';
 
 export default React.createClass({
   getInitialState: function() {
@@ -51,6 +51,6 @@ export default React.createClass({
       <h3>ranger</h3>
       <Importer submit={this.import} columns={this.state.columns} values={this.state.importvalues}/>
       <Table filters={this.state.filters} updateFilters={this.updateFilters} deleteRow={this.deleteRow} selectRow={this.selectRow} columns={this.state.columns} data={this.state.data}/>
-    </div>
+    </div>;
   }
 });

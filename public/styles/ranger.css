@@ -1,0 +1,22 @@
+ul {
+  margin:0;
+  padding:0;
+}
+li.choice {
+  /*background: #EEEEEE;*/
+  border: 1px solid #BBBBBB;
+  list-style: none;
+  padding: 5px;
+  margin: 10px 3px;
+  display: inline-block;
+  cursor: pointer;
+}
+tr.clickable {
+  cursor: pointer;
+  background: white;
+  transition: background .4s;
+}
+tr.clickable:hover {
+  background: #EEFFFF;
+  transition: background .2s;
+}

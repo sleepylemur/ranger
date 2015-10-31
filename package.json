@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js"
   },
+  "jshintConfig": {
+    "esnext": true,
+    "node": true
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
