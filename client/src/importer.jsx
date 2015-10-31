@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default React.createClass({
   getInitialState: function() {
@@ -25,13 +25,13 @@ export default React.createClass({
       <div>
         {this.props.columns.map(col => {
           if (col !== 'id') {
-            return <input onChange={this.change} key={col} type="text" name={col} placeholder={col} value={this.state.values[col]}></input>
+            return <input onChange={this.change} key={col} type="text" name={col} placeholder={col} value={this.state.values[col]}></input>;
           }
         })}
       </div>
       <div>
         <button type="submit">Submit</button>
       </div>
-    </form>
+    </form>;
   }
 });

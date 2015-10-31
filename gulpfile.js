@@ -16,6 +16,7 @@ gulp.task('watch', function() {
   bundler.add('client/index.js');
 
   function rebundle() {
+    console.log('starting bundle');
     bundler
       .bundle()
       .on("error", function (err) {
@@ -28,7 +29,7 @@ gulp.task('watch', function() {
       // .pipe(gulp.dest('public/build'))
       .on('end', function() {
         console.log('finished bundle');
-      })
+      });
   }
   return rebundle();
 });

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default React.createClass({
   clickRow: function(row_id) {
@@ -23,21 +23,21 @@ export default React.createClass({
       <thead>
         <tr>
           {this.props.columns.map(col => {
-            if (col !== 'id') return <th>{col}</th>
+            if (col !== 'id') return <th>{col}</th>;
           })}
         </tr>
       </thead>
       <tbody>
         <tr>
           {this.props.columns.map(col => {
-            if (col !== 'id') return <td><input size="7" type="text" onChange={this.filterUpdate.bind(this,col)} value={this.props.filters[col]}></input></td>
+            if (col !== 'id') return <td><input size="7" type="text" onChange={this.filterUpdate.bind(this,col)} value={this.props.filters[col]}></input></td>;
           })}
           <td><button onClick={this.clearFilters}>Clear</button></td>
         </tr>
       {this.props.data.map((row,row_id) =>
         <tr onClick={this.clickRow.bind(this,row_id)}>
           {this.props.columns.map(col => {
-            if (col !== 'id') return <td>{row[col]}</td>
+            if (col !== 'id') return <td>{row[col]}</td>;
           })}
           <td>
             <button onClick={this.deleteRow.bind(this,row_id)}>Delete</button>
@@ -45,6 +45,6 @@ export default React.createClass({
         </tr>
       )}
       </tbody>
-    </table>
+    </table>;
   }
 });
